@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class MainPlayerController : MonoBehaviour
 {
     public CharacterController c_cntrl;
     public Animator m_anim;
     private Hydrant hyd_obs;
+    public PlatformManager m_plftformmnger;
+    public int m_platfrmlocat;
 
     public float m_movespeed = 0.801f;
     public float moveinput = 0.7f;
     public float Gravity = -9.81f;
     public float p_jumpheight = 3f;
+    public int speedlimit = 10;
+    private int value = 0;
 
 
     public bool isGrounded;
@@ -27,11 +31,14 @@ public class PlayerController : MonoBehaviour
         m_anim = gameObject.GetComponent<Animator>();
         c_cntrl = GetComponent<CharacterController>();
         hyd_obs = FindObjectOfType<Hydrant>();
+        m_plftformmnger = FindObjectOfType<PlatformManager>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        playerDifficultySpeed();
+
         playermovement();
         if (hyd_obs.PlayerHitHydrant)
         {
@@ -41,7 +48,7 @@ public class PlayerController : MonoBehaviour
         {
             playermovement();
         }
-                     
+
     }
     void playerfelldown()
     {
@@ -76,4 +83,23 @@ public class PlayerController : MonoBehaviour
         Velocity.y += Gravity * Time.deltaTime;
         c_cntrl.Move(Velocity * Time.deltaTime);
     }
+    void playerDifficultySpeed()
+    {
+        for (int i = value; i == m_plftformmnger._zedoffset; i = i + 5)
+        {
+            if (i == speedlimit)
+            {
+                speedlimit = m_plftformmnger._zedoffset;
+                speedlimit = speedlimit + 10;
+                value = speedlimit;
+            }
+
+        }
+
+        if (m_plftformmnger._zedoffset == speedlimit)
+        {
+            m_movespeed = m_movespeed + 0.005f;
+        }
+    }
 }
+

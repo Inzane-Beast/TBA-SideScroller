@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 1943211843575734233}
   - component: {fileID: 5448574112474514544}
   - component: {fileID: 5448574112474514540}
-  - component: {fileID: 5448574112474514547}
+  - component: {fileID: 7113407605732655742}
   m_Layer: 0
   m_Name: Delivery_Boy
   m_TagString: Player
@@ -677,7 +677,7 @@ CharacterController:
   m_SkinWidth: 0.002
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.06, z: 0}
---- !u!114 &5448574112474514547
+--- !u!114 &7113407605732655742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,15 +686,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5142073489731378969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1096c548560dd4192e452f3a87cf81, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ed66464dbc62c849bb0030e32d6685e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   c_cntrl: {fileID: 5448574112474514540}
   m_anim: {fileID: 1943211843575734233}
+  m_platfrmlocat: 0
   m_movespeed: 0.801
-  moveinput: 0.5
-  Gravity: -5.81
+  moveinput: 0.7
+  Gravity: -7.81
   p_jumpheight: 0.5
+  speedlimit: 10
   isGrounded: 0
   groundcheck: {fileID: 5448574113753477326}
   GroundDistance: 0.2

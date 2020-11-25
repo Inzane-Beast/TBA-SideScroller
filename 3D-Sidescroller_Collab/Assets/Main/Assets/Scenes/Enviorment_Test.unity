@@ -414,11 +414,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &976243967 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5482992035643524515, guid: 9b63860ec29c05f4cb5091b2c8564bd2, type: 3}
+--- !u!1 &1291736745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5142073489731378969, guid: 9b63860ec29c05f4cb5091b2c8564bd2, type: 3}
   m_PrefabInstance: {fileID: 154745675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1291736750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291736745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3e6219612c70948932074758deb965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: 0
+  scorePerSecond: 12
+  minimumlevellimit: 50
+  maxlevelLimit: 1000
+  p_speedincrease: 0.005
+  levelLimitIntervel: 50
+  increaselevel: 0
 --- !u!1 &1484223432
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +449,7 @@ GameObject:
   - component: {fileID: 1484223435}
   - component: {fileID: 1484223434}
   - component: {fileID: 1484223433}
+  - component: {fileID: 1484223436}
   m_Layer: 0
   m_Name: MainCameraWithController
   m_TagString: Untagged
@@ -453,6 +473,7 @@ MonoBehaviour:
   moveinput: 0.7
   m_movespeed: 0.801
   cntller: {fileID: 0}
+  p_score: {fileID: 0}
 --- !u!114 &1484223434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +492,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 976243967}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 20
@@ -503,6 +524,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 12.723, y: -76.322, z: 0}
+--- !u!65 &1484223436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484223432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.162877, y: 1.0000001, z: 3.4281611}
+  m_Center: {x: 0.87681407, y: 0.0000000849496, z: 1.2140838}
 --- !u!1 &1611704227
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,10 +11,12 @@ public class CameraMovement : MonoBehaviour
 
 
     public MainPlayerController cntller;
+    public PlayerScore p_score;
 
     void Start()
     {
         cntller= FindObjectOfType<MainPlayerController>();
+        p_score = FindObjectOfType<PlayerScore>();
 
         cameraspeed = moveinput * m_movespeed;
     }
@@ -22,8 +24,27 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-        m_movespeed = cntller.m_movespeed;
-        cameraspeed = moveinput * m_movespeed;
-        transform.position = transform.position + new Vector3(0f,0f,cameraspeed* Time.deltaTime);
+        if (!cntller.G_GameOver)
+        {
+          
+            if (p_score.increaselevel)
+            {
+                m_movespeed = m_movespeed + p_score.p_speedincrease;
+            }
+            if (cntller.playerhitsoftobstacles)
+            {
+                moveinput = 0.7f;
+            }
+            if (!cntller.playerhitsoftobstacles && cntller.boostenergy)
+            {
+                moveinput = 0.6f;
+            }
+            cameraspeed = moveinput * m_movespeed;
+            transform.position = transform.position + new Vector3(0f, 0f, cameraspeed * Time.deltaTime);
+        }   
+        else
+        {
+           Time.timeScale = 0;
+        }
     }
 }

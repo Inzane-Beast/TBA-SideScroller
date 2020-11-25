@@ -9,7 +9,7 @@ public class Hydrant : MonoBehaviour
     void Start()
     {
         PlayerHitHydrant = false;
-        col = GetComponent<Collider>();
+        col = this.gameObject.GetComponent<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)

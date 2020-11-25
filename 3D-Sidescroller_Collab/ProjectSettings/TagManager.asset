@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Hydrant
+  - Obstacles
+  - SoftObstacles
+  - liteObstacles
   layers:
   - Default
   - TransparentFX

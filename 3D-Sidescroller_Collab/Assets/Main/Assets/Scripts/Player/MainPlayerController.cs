@@ -5,8 +5,8 @@ using UnityEngine;
 public class MainPlayerController : MonoBehaviour
 {
     public CharacterController c_cntrl;
+    public PlayerScore p_score;
     public Animator m_anim;
-    private Hydrant hyd_obs;
     public PlatformManager m_plftformmnger;
     public int m_platfrmlocat;
 
@@ -16,9 +16,14 @@ public class MainPlayerController : MonoBehaviour
     public float p_jumpheight = 3f;
     public int speedlimit = 10;
     private int value = 0;
+    public bool playercanmove = true;
+    public bool playerhitsoftobstacles = false;
+    public bool boostenergy = false;
+    public bool G_GameOver = false;
 
 
     public bool isGrounded;
+    public Collider col;
 
     public Transform groundcheck;
     public float GroundDistance = 0.2f;
@@ -30,28 +35,43 @@ public class MainPlayerController : MonoBehaviour
     {
         m_anim = gameObject.GetComponent<Animator>();
         c_cntrl = GetComponent<CharacterController>();
-        hyd_obs = FindObjectOfType<Hydrant>();
         m_plftformmnger = FindObjectOfType<PlatformManager>();
+        p_score = GetComponent<PlayerScore>();
+        col = GetComponent<Collider>();
     }
 
 
     void Update()
     {
-        playerDifficultySpeed();
+        if (G_GameOver)
+        {
+            Time.timeScale = 0;
+        }
+        if (playerhitsoftobstacles)
+        {
+            StartCoroutine(softobstaclehit());
+            boostenergy = true;
+            if (boostenergy)
+            {
+                moveinput = 0.7f;
+            }
+        }
 
-        playermovement();
-        if (hyd_obs.PlayerHitHydrant)
+       
+        if (!playercanmove)
         {
             playerfelldown();
         }
         else
         {
             playermovement();
+            playerDifficultySpeed();
         }
 
     }
     void playerfelldown()
     {
+        
         m_anim.SetBool("isrunning", false);
         m_anim.SetBool("isjumping", false);
         m_anim.SetTrigger("HardCollided");
@@ -65,7 +85,7 @@ public class MainPlayerController : MonoBehaviour
             Velocity.y = -2f;
         }
 
-        moveinput = 0.7f;
+        
         Vector3 Movement = transform.forward * moveinput;
         c_cntrl.Move(Movement * m_movespeed * Time.deltaTime);
 
@@ -85,21 +105,52 @@ public class MainPlayerController : MonoBehaviour
     }
     void playerDifficultySpeed()
     {
-        for (int i = value; i == m_plftformmnger._zedoffset; i = i + 5)
+        if (p_score.increaselevel)
         {
-            if (i == speedlimit)
-            {
-                speedlimit = m_plftformmnger._zedoffset;
-                speedlimit = speedlimit + 10;
-                value = speedlimit;
-            }
-
+            m_movespeed = m_movespeed + p_score.p_speedincrease;
         }
-
-        if (m_plftformmnger._zedoffset == speedlimit)
+        else
         {
-            m_movespeed = m_movespeed + 0.005f;
+            m_movespeed = m_movespeed + 0f;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacles"))
+        {
+            playercanmove = false;
+        }
+        else
+        {
+            playercanmove = true;
+        }
+        if (other.gameObject.CompareTag("SoftObstacles"))
+        {
+            m_movespeed = m_movespeed - 0.03f;
+            playerhitsoftobstacles = true;
+
+        }
+        else
+        {
+            playerhitsoftobstacles = false;
+        }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("MainCamera"))
+        {
+            G_GameOver = true;
+        }
+    }
+    private IEnumerator softobstaclehit()
+    {
+        yield return new WaitForSeconds(0.3f);
+       
+        playerhitsoftobstacles = false;
+
+    }
+
+    
 }
 

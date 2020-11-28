@@ -12,11 +12,13 @@ public class CameraMovement : MonoBehaviour
 
     public MainPlayerController cntller;
     public PlayerScore p_score;
+    public InteractionWithPedestrian i_ped;
 
     void Start()
     {
         cntller= FindObjectOfType<MainPlayerController>();
         p_score = FindObjectOfType<PlayerScore>();
+        i_ped = FindObjectOfType<InteractionWithPedestrian>();
 
         cameraspeed = moveinput * m_movespeed;
     }
@@ -24,6 +26,16 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
+        if (i_ped.endthecamera)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+
+
         if (!cntller.G_GameOver)
         {
           

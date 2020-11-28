@@ -15,11 +15,13 @@ public class MainPlayerController : MonoBehaviour
     public float Gravity = -9.81f;
     public float p_jumpheight = 3f;
     public int speedlimit = 10;
-    private int value = 0;
+   // private int value = 0;
     public bool playercanmove = true;
     public bool playerhitsoftobstacles = false;
     public bool boostenergy = false;
     public bool G_GameOver = false;
+    public bool playerdead = false;
+
 
 
     public bool isGrounded;
@@ -58,9 +60,10 @@ public class MainPlayerController : MonoBehaviour
         }
 
        
-        if (!playercanmove)
+        if (!playercanmove && playerdead)
         {
             playerfelldown();
+
         }
         else
         {
@@ -69,7 +72,7 @@ public class MainPlayerController : MonoBehaviour
         }
 
     }
-    void playerfelldown()
+    public void playerfelldown()
     {
         
         m_anim.SetBool("isrunning", false);
@@ -123,7 +126,9 @@ public class MainPlayerController : MonoBehaviour
         else
         {
             playercanmove = true;
+            playerdead = true;
         }
+
         if (other.gameObject.CompareTag("SoftObstacles"))
         {
             m_movespeed = m_movespeed - 0.03f;
@@ -134,7 +139,7 @@ public class MainPlayerController : MonoBehaviour
         {
             playerhitsoftobstacles = false;
         }
-
+     
     }
     private void OnTriggerExit(Collider other)
     {
@@ -142,6 +147,7 @@ public class MainPlayerController : MonoBehaviour
         {
             G_GameOver = true;
         }
+        
     }
     private IEnumerator softobstaclehit()
     {
@@ -150,6 +156,8 @@ public class MainPlayerController : MonoBehaviour
         playerhitsoftobstacles = false;
 
     }
+    
+   
 
     
 }

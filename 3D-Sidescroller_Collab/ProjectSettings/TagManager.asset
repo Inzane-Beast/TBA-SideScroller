@@ -9,6 +9,13 @@ TagManager:
   - Obstacles
   - SoftObstacles
   - liteObstacles
+  - Pedestrian
+  - EvadedSection
+  - wisilesection
+  - BadTiming
+  - pedestrianarea
+  - Spawnthepedestrian
+  - destroypedestrian
   layers:
   - Default
   - TransparentFX

@@ -49,7 +49,8 @@ public class CameraMovement : MonoBehaviour
             }
             if (!cntller.playerhitsoftobstacles && cntller.boostenergy)
             {
-                moveinput = 0.6f;
+                // moveinput = 0.6f;
+                moveinput = 0.7f;
             }
             cameraspeed = moveinput * m_movespeed;
             transform.position = transform.position + new Vector3(0f, 0f, cameraspeed * Time.deltaTime);

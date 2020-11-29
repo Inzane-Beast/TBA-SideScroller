@@ -25,7 +25,6 @@ public class MainPlayerController : MonoBehaviour
 
 
     public bool isGrounded;
-    public Collider col;
 
     public Transform groundcheck;
     public float GroundDistance = 0.2f;
@@ -39,7 +38,6 @@ public class MainPlayerController : MonoBehaviour
         c_cntrl = GetComponent<CharacterController>();
         m_plftformmnger = FindObjectOfType<PlatformManager>();
         p_score = GetComponent<PlayerScore>();
-        col = GetComponent<Collider>();
     }
 
 

@@ -16,6 +16,7 @@ TagManager:
   - pedestrianarea
   - Spawnthepedestrian
   - destroypedestrian
+  - Coin
   layers:
   - Default
   - TransparentFX

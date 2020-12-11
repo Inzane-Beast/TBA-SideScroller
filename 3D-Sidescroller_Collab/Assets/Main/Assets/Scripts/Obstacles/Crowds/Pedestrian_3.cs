@@ -59,7 +59,7 @@ public class Pedestrian_3 : MonoBehaviour
         {
             xtransform = 0f;
             this.gameObject.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-            rb.AddForce(0f, 0f, 0.9f * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(0f, 0f, 0.30f * Time.deltaTime, ForceMode.Impulse);
             animator.SetBool("timetododge", true);
             animator.SetBool("playerpassedyou", false);
 

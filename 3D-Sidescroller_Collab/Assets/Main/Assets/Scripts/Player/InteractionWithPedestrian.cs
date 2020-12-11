@@ -99,11 +99,6 @@ public class InteractionWithPedestrian : MonoBehaviour
             leftsection = true;
             playercanwitsle = false;
         }
-        if (other.gameObject.CompareTag("pedestrianarea"))
-        {
-            // Destroy(other.gameObject);
-            other.gameObject.SetActive(false);
-        }
     }
     private void OnTriggerStay(Collider other)
     {

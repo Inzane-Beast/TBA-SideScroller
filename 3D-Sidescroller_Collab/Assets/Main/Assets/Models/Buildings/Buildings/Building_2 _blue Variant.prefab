@@ -55,9 +55,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_2 _blue Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 775518749591534593, guid: cf801428d7126564ab532a5cf2212ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4689026690813991154, guid: cf801428d7126564ab532a5cf2212ad4, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7fcf0ef2709ecd645b50da44b19e1d3d, type: 2}
+    - target: {fileID: 6091673187898489172, guid: cf801428d7126564ab532a5cf2212ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707339828775126410, guid: cf801428d7126564ab532a5cf2212ad4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf801428d7126564ab532a5cf2212ad4, type: 3}

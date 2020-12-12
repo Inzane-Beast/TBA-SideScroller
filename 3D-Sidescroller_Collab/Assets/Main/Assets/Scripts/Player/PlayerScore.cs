@@ -16,6 +16,8 @@ public class PlayerScore : MonoBehaviour
 
     public bool increaselevel = false;
 
+    
+
 
     
  
@@ -27,6 +29,7 @@ public class PlayerScore : MonoBehaviour
    
     void Update()
     {
+        
         scorecount += scorePerSecond * Time.deltaTime;
         Score = (int)scorecount;
 
@@ -39,5 +42,7 @@ public class PlayerScore : MonoBehaviour
         {
             increaselevel = false;
         }
+
     }
+
 }

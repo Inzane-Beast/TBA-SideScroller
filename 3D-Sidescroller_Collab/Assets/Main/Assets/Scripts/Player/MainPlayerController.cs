@@ -22,6 +22,9 @@ public class MainPlayerController : MonoBehaviour
     public bool G_GameOver = false;
     public bool playerdead = false;
 
+    public GameObject gameoverUi;
+    public GameObject HUD;
+
 
 
     public bool isGrounded;
@@ -46,6 +49,9 @@ public class MainPlayerController : MonoBehaviour
         if (G_GameOver)
         {
             Time.timeScale = 0;
+            gameoverUi.SetActive(true);
+            HUD.SetActive(false);
+          
         }
         if (playerhitsoftobstacles)
         {

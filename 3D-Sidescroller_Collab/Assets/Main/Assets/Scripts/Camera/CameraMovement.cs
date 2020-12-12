@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CameraMovement : MonoBehaviour
 {
     public float cameraspeed;
     public float moveinput = 0.7f;
     public float m_movespeed = 0.801f;
+
+    public GameObject bgaudio;
+    public AudioSource acon;
 
 
 
@@ -19,8 +23,10 @@ public class CameraMovement : MonoBehaviour
         cntller= FindObjectOfType<MainPlayerController>();
         p_score = FindObjectOfType<PlayerScore>();
         i_ped = FindObjectOfType<InteractionWithPedestrian>();
+        acon = bgaudio.GetComponent<AudioSource>();
 
         cameraspeed = moveinput * m_movespeed;
+        
     }
 
 
@@ -54,10 +60,13 @@ public class CameraMovement : MonoBehaviour
             }
             cameraspeed = moveinput * m_movespeed;
             transform.position = transform.position + new Vector3(0f, 0f, cameraspeed * Time.deltaTime);
+            
         }   
         else
         {
            Time.timeScale = 0;
+            acon.enabled = false;
+            
         }
     }
 }

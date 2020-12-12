@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class CollectCoins : MonoBehaviour
 {
-    public int score;
+    public int m_coins;
     void Start()
     {
-        score = 0;
+        m_coins = 0;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            score = score + 1;
+            m_coins = m_coins + 1;
         }
     }
 }

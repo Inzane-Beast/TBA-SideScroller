@@ -40,6 +40,7 @@ public class InteractionWithPedestrian : MonoBehaviour
         if(letsevade && playerwitsled)
         {
             pedestrianmoves = true;
+            
         }
 
         if (hitpedestrian)
@@ -126,6 +127,7 @@ public class InteractionWithPedestrian : MonoBehaviour
                 letsevade = true;
                 playerwitsled = true;
                 playercanwitsle = false;
+                FindObjectOfType<AudioManager>().Play("W1");
 
             }           
         }

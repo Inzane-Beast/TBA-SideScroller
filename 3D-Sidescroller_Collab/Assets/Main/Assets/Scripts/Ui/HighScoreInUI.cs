@@ -9,10 +9,14 @@ public class HighScoreInUI : MonoBehaviour
     public TextMeshProUGUI highscore;
 
     public PlayerScore plrscre;
+    
+
     void Start()
     {
+        
         plrscre = FindObjectOfType<PlayerScore>();
-        highscore.text = PlayerPrefs.GetInt("HighScore",0).ToString();
+        highscore.text = PlayerPrefs.GetInt("HighScore",0).ToString() + "m";
+       
     }
 
     // Update is called once per frame
@@ -20,8 +24,17 @@ public class HighScoreInUI : MonoBehaviour
     {
         if(plrscre.Score > PlayerPrefs.GetInt("HighScore", 0))
         {
+            
             PlayerPrefs.SetInt("HighScore", plrscre.Score);
-            highscore.text = PlayerPrefs.GetInt("HighScore", plrscre.Score).ToString();
+            highscore.text = PlayerPrefs.GetInt("HighScore", plrscre.Score).ToString() + "m";
+        }
+        if(plrscre.Score > PlayerPrefs.GetInt("HighScore"))
+        {
+            GameObject.FindGameObjectWithTag("beatenHighscore").SetActive(true);
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("beatenHighscore").SetActive(false);
         }
     }
 }

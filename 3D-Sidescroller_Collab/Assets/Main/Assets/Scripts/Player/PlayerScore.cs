@@ -42,7 +42,10 @@ public class PlayerScore : MonoBehaviour
         {
             increaselevel = false;
         }
-
+        if(Score > PlayerPrefs.GetInt("HighScore"))
+        {
+            GameObject.FindGameObjectWithTag("beatenHighscore").SetActive(true);
+        }
     }
 
 }

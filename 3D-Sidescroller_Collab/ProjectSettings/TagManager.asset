@@ -19,6 +19,7 @@ TagManager:
   - Coin
   - Bgaudio
   - GameOverMenue
+  - beatenHighscore
   layers:
   - Default
   - TransparentFX

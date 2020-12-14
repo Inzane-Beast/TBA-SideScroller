@@ -15,6 +15,7 @@ public class CollectCoins : MonoBehaviour
         if (other.gameObject.CompareTag("Coin"))
         {
             m_coins = m_coins + 1;
+            FindObjectOfType<AudioManager>().Play("C1");
         }
     }
 }

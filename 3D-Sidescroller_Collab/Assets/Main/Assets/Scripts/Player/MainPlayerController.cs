@@ -100,7 +100,8 @@ public class MainPlayerController : MonoBehaviour
         {
             Velocity.y = Mathf.Sqrt(p_jumpheight * -2 * Gravity);
             m_anim.SetBool("isjumping", true);
-            m_anim.SetBool("isrunning", false);
+            m_anim.SetBool("isrunning", false);        
+           FindObjectOfType<AudioManager>().Play("J1");
         }
         else
         {

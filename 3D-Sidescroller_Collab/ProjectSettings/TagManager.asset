@@ -20,6 +20,7 @@ TagManager:
   - Bgaudio
   - GameOverMenue
   - beatenHighscore
+  - postprocess
   layers:
   - Default
   - TransparentFX

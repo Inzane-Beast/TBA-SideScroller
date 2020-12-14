@@ -18,11 +18,13 @@ public class GameOver : MonoBehaviour
     }
     public void restart()
     {
+        FindObjectOfType<AudioManager>().Play("M1");
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
     public void tomainmenue()
     {
+        FindObjectOfType<AudioManager>().Play("M1");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         Time.timeScale = 1;
     }

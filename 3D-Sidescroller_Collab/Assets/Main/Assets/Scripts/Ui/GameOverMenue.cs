@@ -6,10 +6,16 @@ using UnityEngine;
 public class GameOverMenue : MonoBehaviour
 {
     bool gamahasended = false;
+
+    public PlayerScore Plrscr;
+
+    public GameObject highscoredisplay;
    
     void Start()
     {
         this.gameObject.SetActive(false);
+        Plrscr = FindObjectOfType<PlayerScore>();
+        highscoredisplay = GetComponent<GameObject>();
     }
 
     
@@ -26,6 +32,10 @@ public class GameOverMenue : MonoBehaviour
             Time.timeScale = 0;
             GameObject.FindGameObjectWithTag("GameOverMenue").SetActive(true);
 
+            if (Plrscr.Score > PlayerPrefs.GetInt("HighScore"))
+            {
+                GameObject.FindGameObjectWithTag("beatenHighscore").SetActive(true);
+            }
         }
     }
     public void restart()

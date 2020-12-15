@@ -25,12 +25,15 @@ public class InteractionWithPedestrian : MonoBehaviour
     public MainPlayerController cntller;
     public Animator anim;
 
+  
+
 
 
     void Start()
     {
         cntller = GetComponent<MainPlayerController>();
         anim = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -128,7 +131,7 @@ public class InteractionWithPedestrian : MonoBehaviour
                 playerwitsled = true;
                 playercanwitsle = false;
                 FindObjectOfType<AudioManager>().Play("W1");
-
+                
             }           
         }
         else

@@ -24,6 +24,7 @@ public class MainPlayerController : MonoBehaviour
 
     public GameObject gameoverUi;
     public GameObject HUD;
+    public SfxPlaying sfx;
 
 
 
@@ -41,6 +42,7 @@ public class MainPlayerController : MonoBehaviour
         c_cntrl = GetComponent<CharacterController>();
         m_plftformmnger = FindObjectOfType<PlatformManager>();
         p_score = GetComponent<PlayerScore>();
+        sfx = FindObjectOfType<SfxPlaying>();
     }
 
 
@@ -102,6 +104,7 @@ public class MainPlayerController : MonoBehaviour
             m_anim.SetBool("isjumping", true);
             m_anim.SetBool("isrunning", false);        
            FindObjectOfType<AudioManager>().Play("J1");
+            sfx.playjump();
         }
         else
         {

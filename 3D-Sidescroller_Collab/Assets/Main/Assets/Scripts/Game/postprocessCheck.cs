@@ -12,21 +12,12 @@ public class postprocessCheck : MonoBehaviour
     {
         grpmen = FindObjectOfType<GraphicsMenu>();
 
-        //  if(grpmen.PostProcessEnabled == true)
-        //   {
-        //         Postprocessing.SetActive(true);
-        //   }
-        //   else
-        //    {
-        //        Postprocessing.SetActive(false);
-        //   }
 
-
-        if (PlayerPrefs.GetInt("Post") >= 0)
+        if (PlayerPrefs.GetInt("Post") == 1)
         {
             Postprocessing.SetActive(true);
         }
-        else if (PlayerPrefs.GetInt("Post") == 1)
+        else if (PlayerPrefs.GetInt("Post") == 0)
         {
             Postprocessing.SetActive(false);
         }

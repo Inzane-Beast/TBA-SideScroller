@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class optionsmenue : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class optionsmenue : MonoBehaviour
     public GameObject sounds;
     public GameObject options;
     public GameObject settings;
+
+    public AudioMixer mainaudio;
+    public AudioMixer sfxaudio;
 
     public void backtomenue()
     {
@@ -44,5 +48,22 @@ public class optionsmenue : MonoBehaviour
         sounds.SetActive(false);
         credits.SetActive(false);
         menue.SetActive(false);
+    }
+
+    public void setvolume(float volume)
+    {
+        mainaudio.SetFloat("MainVolume", volume);
+    }
+    public void sfxvolume(float sfx)
+    {
+        sfxaudio.SetFloat("SFXvolume", sfx);
+    }
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+    public void setfullscreen(bool isfullscreen)
+    {
+        Screen.fullScreen = isfullscreen;
     }
 }

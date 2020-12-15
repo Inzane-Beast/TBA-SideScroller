@@ -36,10 +36,7 @@ public class CameraMovement : MonoBehaviour
         {
             Time.timeScale = 0;
         }
-        else
-        {
-            Time.timeScale = 1;
-        }
+        
 
 
         if (!cntller.G_GameOver)

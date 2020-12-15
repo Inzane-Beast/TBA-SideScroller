@@ -51,7 +51,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: J1
     Clip: {fileID: 8300000, guid: 29c54295d8a68144da13fb53f8ca6e2c, type: 3}
-    Volume: 0.692
+    Volume: 0.482
     pitch: 1.4
     source: {fileID: 0}
   - name: C1
@@ -61,6 +61,6 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: M1
     Clip: {fileID: 8300000, guid: a11037be1e9efac479a814dc292577cd, type: 3}
-    Volume: 0.692
+    Volume: 0.93
     pitch: 1.4
     source: {fileID: 0}

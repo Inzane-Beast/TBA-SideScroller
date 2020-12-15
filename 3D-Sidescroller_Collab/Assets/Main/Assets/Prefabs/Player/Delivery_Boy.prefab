@@ -606,6 +606,7 @@ GameObject:
   - component: {fileID: 2135698548}
   - component: {fileID: 1291736750}
   - component: {fileID: 1269341046}
+  - component: {fileID: 1239164289}
   m_Layer: 0
   m_Name: Delivery_Boy
   m_TagString: Player
@@ -708,6 +709,9 @@ MonoBehaviour:
   boostenergy: 0
   G_GameOver: 0
   playerdead: 0
+  gameoverUi: {fileID: 0}
+  HUD: {fileID: 0}
+  sfx: {fileID: 0}
   isGrounded: 1
   groundcheck: {fileID: 5448574113753477326}
   GroundDistance: 0.2
@@ -786,7 +790,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5e05dee3dae0f4686c867e9edcd25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  m_coins: 0
+--- !u!114 &1239164289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142073489731378969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8500c9c009e7784ebbea8b5c381f984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpobject: {fileID: 0}
+  witsleobject: {fileID: 0}
 --- !u!1 &5296826013587611662
 GameObject:
   m_ObjectHideFlags: 0

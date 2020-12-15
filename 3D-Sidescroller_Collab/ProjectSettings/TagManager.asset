@@ -21,6 +21,8 @@ TagManager:
   - GameOverMenue
   - beatenHighscore
   - postprocess
+  - jumpMsge
+  - witlemsge
   layers:
   - Default
   - TransparentFX

@@ -6445,11 +6445,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2450011654916742719, guid: 0a925c17fed83334f882e090893e3956, type: 3}
       propertyPath: m_Size.z
-      value: 0.30218577
+      value: 0.37437463
       objectReference: {fileID: 0}
     - target: {fileID: 2450011654916742719, guid: 0a925c17fed83334f882e090893e3956, type: 3}
       propertyPath: m_Center.z
-      value: 0.06859338
+      value: 0.032498956
       objectReference: {fileID: 0}
     - target: {fileID: 5922007927881428688, guid: 0a925c17fed83334f882e090893e3956, type: 3}
       propertyPath: m_Name

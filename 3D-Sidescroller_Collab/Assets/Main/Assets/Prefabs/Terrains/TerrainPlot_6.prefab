@@ -7245,6 +7245,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6830382200215154985}
     m_Modifications:
+    - target: {fileID: 2450011654916742719, guid: 0a925c17fed83334f882e090893e3956, type: 3}
+      propertyPath: m_Size.z
+      value: 0.2685523
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450011654916742719, guid: 0a925c17fed83334f882e090893e3956, type: 3}
+      propertyPath: m_Center.z
+      value: 0.08541012
+      objectReference: {fileID: 0}
     - target: {fileID: 5922007927881428688, guid: 0a925c17fed83334f882e090893e3956, type: 3}
       propertyPath: m_Name
       value: Pedestrian
@@ -7308,6 +7316,10 @@ PrefabInstance:
     - target: {fileID: 6956965761553474140, guid: 0a925c17fed83334f882e090893e3956, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.251
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956965761553474140, guid: 0a925c17fed83334f882e090893e3956, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.081
       objectReference: {fileID: 0}
     - target: {fileID: 7766399475370916070, guid: 0a925c17fed83334f882e090893e3956, type: 3}
       propertyPath: m_IsActive

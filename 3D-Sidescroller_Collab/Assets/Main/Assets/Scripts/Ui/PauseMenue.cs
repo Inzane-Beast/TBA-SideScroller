@@ -46,10 +46,10 @@ public class PauseMenue : MonoBehaviour
     }
     public void tomainmenue()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void restartgame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

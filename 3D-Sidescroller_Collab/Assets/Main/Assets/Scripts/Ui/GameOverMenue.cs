@@ -40,10 +40,10 @@ public class GameOverMenue : MonoBehaviour
     }
     public void restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     public void tomainmenue()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
